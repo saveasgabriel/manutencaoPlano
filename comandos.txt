@@ -1,0 +1,11 @@
+dotnet add package Microsoft.EntityFrameworkCore -v 3.1.4
+
+dotnet add package Microsoft.EntityFrameworkCore.Tools -v 3.1.4
+
+dotnet add package Npgsql.EntityFrameworkCore.Postgresql -v 3.1.4
+
+dotnet add package Microsoft.EntityFrameworkCore.Design -v 3.1.4
+
+dotnet tool install --global dotnet-ef --version 3.1.4
+
+dotnet ef dbcontext scaffold "Host=localhost;Port=5432;Pooling=true;Database=planodiario;User Id=postgres;Password=1234;" Npgsql.EntityFrameworkCore.PostgreSQL --schema fato -t ft_abate_quarteio_habilitacao --context-dir Data --output-dir Models
